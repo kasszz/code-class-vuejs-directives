@@ -1,0 +1,107 @@
+{% extends "views/_base/base.html" %}
+
+{% block navigation %}
+    <nav class="cc-navigation">
+        <a href="/" class="cc-back-link">← back to overview</a>
+        <a href="/exercise-2-answer" class="cc-answer-link">see answer →</a>
+    </nav>
+{% endblock %}
+
+{% block introduction %}
+    <h1>Exercise 2</h1>
+
+    <p>Add a directive to make every even character uppercase</p>
+    <p>(extra) Make a modifier so you can switch between even and odd</p>
+{% endblock %}
+
+{% block html %}
+    <section class="cc-html-playground">
+        <div class="exercise">
+            <div id="app">
+                <form class="form" action="#" method="GET">
+                    <p class="title">I'm a very important form post</p>
+
+                    <label>
+                        Your message:
+                        <textarea class="input" type="text" v-model="name"></textarea>
+                    </label>
+
+                    <button type="submit">post</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        new Vue({
+            el: '#app',
+            directives: {
+
+            },
+            delimiters: ['${', '}'],
+            data() {
+                return {
+                    name: ''
+                }
+            }
+        })
+    </script>
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .exercise {
+            margin: 2rem auto;
+            padding: 1rem;
+            max-width: 600px;
+            background: #fff;
+        }
+
+        .exercise h1 {
+            margin: 0 0 1rem 0;
+        }
+
+        .exercise .data {
+            font-weight: bold;
+        }
+
+        .exercise .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .exercise input {
+            padding: .1rem .5rem;
+            width: 50px;
+            line-height: 1.8rem;
+        }
+
+        .exercise button {
+            padding: 1rem;
+            font-size: 1.5rem;
+            background-color: deeppink;
+            color: #fff;
+            border: none;
+            line-height: 2rem;
+            font-family: 'Comic Sans MS';
+        }
+
+        #app .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #app .title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        #app .input {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+    </style>
+{% endblock %}
